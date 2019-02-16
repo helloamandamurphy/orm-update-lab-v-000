@@ -9,7 +9,7 @@ def initialize(name, grade, id = nil)
   @id = id
 end
 
-def self.
+def self.create_table
   sql =  <<-SQL 
       CREATE TABLE IF NOT EXISTS students (
         id INTEGER PRIMARY KEY, 
@@ -22,6 +22,8 @@ def self.
 end 
 
 def self.drop_table
+  sql = "DROP TABLE IF EXISTS students"
+  DB[:conn].execute(sql) 
 end 
 
 def save
