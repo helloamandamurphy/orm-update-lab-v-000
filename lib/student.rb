@@ -31,6 +31,7 @@ def save
     self.update
   else
     sql = "INSERT INTO students (name, grade) VALUES (?,?)"
+    
 
 
 end
